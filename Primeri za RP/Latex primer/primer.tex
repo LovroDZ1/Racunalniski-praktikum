@@ -145,3 +145,64 @@ Sklic na literaturo \cite{knjiga}.
 \bibliography{viri}
 
 \end{document}
+
+
+
+%beamer
+\documentclass{beamer}
+
+\usetheme{Madrid}
+
+\title{Primer Beamer predstavitve}
+\author{Lovro Zajec}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Uvod}
+\begin{itemize}[<+->]
+  \item Prva točka
+  \item Druga točka
+  \item Tretja točka
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Bloki}
+\begin{block}{Trditev}
+Vsota dveh sodih števil je soda.
+\end{block}
+
+\begin{exampleblock}{Primer}
+\(2 + 4 = 6\)
+\end{exampleblock}
+
+\begin{alertblock}{Pozor}
+To je pomembno opozorilo.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Postopno odkrivanje}
+Najprej to.
+\pause
+
+Potem to.
+
+\only<3>{In na koncu še to.}
+\end{frame}
+
+\begin{frame}{Stolpci}
+\begin{columns}
+  \begin{column}{0.5\textwidth}
+    Leva stran
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    Desna stran
+  \end{column}
+\end{columns}
+\end{frame}
+
+\end{document}
