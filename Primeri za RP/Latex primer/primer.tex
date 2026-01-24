@@ -1,0 +1,147 @@
+\documentclass[a4paper,10pt]{article}
+
+% Jezik in kodiranje
+\usepackage[slovene]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Matematika
+\usepackage{amsmath, amssymb, amsthm}
+
+% Ostali paketi
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+% Novi ukazi
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+
+% Okolja
+\theoremstyle{definition}
+\newtheorem{definicija}{Definicija}
+
+\theoremstyle{plain}
+\newtheorem{trditev}{Trditev}
+
+% Naslov
+\title{Primer LaTeX dokumenta}
+\author{Lovro Zajec}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+To je povzetek dokumenta, ki prikazuje uporabo LaTeX ukazov.
+\end{abstract}
+
+\tableofcontents
+
+\section{Uvod}
+\label{sec:uvod}
+
+Naj bo \( f : \R \to \R \) funkcija, definirana s predpisom
+\[
+f(x) = x^2.
+\]
+
+Uporabimo \emph{poudarek}, \textbf{krepko}, \textit{poševno},
+\texttt{monospace}, \verb|inline kodo| in povezavo
+\url{https://www.fmf.uni-lj.si}.
+
+\noindent
+To besedilo nima zamika.
+
+\begin{center}
+To besedilo je na sredini.
+\end{center}
+
+\subsection{Seznami}
+
+\begin{itemize}
+  \item Prva točka
+  \item Druga točka
+  \begin{enumerate}
+    \item Podtočka
+    \item Še ena
+  \end{enumerate}
+\end{itemize}
+
+\subsection{Matematika}
+
+\begin{definicija}
+Naj bo \( x \in \R \). Absolutna vrednost je \( \abs{x} \).
+\end{definicija}
+
+\begin{trditev}
+Velja
+\begin{equation}
+\label{eq:limit}
+\lim_{x \to 0} \frac{\sin x}{x} = 1.
+\end{equation}
+\end{trditev}
+
+Sklic na enačbo \eqref{eq:limit} in razdelek \ref{sec:uvod}
+na strani \pageref{sec:uvod}.
+
+\begin{align}
+f(x) &= x^2 \\
+f'(x) &= 2x
+\end{align}
+
+\[
+g(x)=
+\begin{cases}
+x^2, & x \ge 0, \\
+-x, & x < 0.
+\end{cases}
+\]
+
+Matrika:
+\[
+\begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix}
+\]
+
+\subsection{Tabela}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cc}
+\toprule
+Ime & Točke \\
+\midrule
+Ana & 10 \\
+\multicolumn{2}{c}{Skupaj} \\
+\bottomrule
+\end{tabular}
+\caption{Primer tabele}
+\end{table}
+
+\subsection{Slika}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{slika.png}
+\caption{Primer slike}
+\end{figure}
+
+\subsection{Verbatim}
+
+\begin{verbatim}
+for i in range(5):
+    print(i)
+\end{verbatim}
+
+Sklic na literaturo \cite{knjiga}.
+
+\nocite{*}
+
+\bibliographystyle{plain}
+\bibliography{viri}
+
+\end{document}
